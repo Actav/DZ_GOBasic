@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 )
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 
 	// Подсчет встречаемости каждой буквы и общего количества букв
 	for _, letter := range sentence {
-		if letter != ' ' && letter != '\n' { // Пропускаем пробелы и символы новой строки
+		if unicode.IsLetter(letter) {
 			letterCounts[letter]++
 			totalLetters++
 		}
