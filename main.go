@@ -14,9 +14,9 @@ func main() {
 
 	filePath := os.Args[1]
 
-	fileName := extractors.FileName(filePath)
-	nameWithoutExt, fileExt := extractors.FileExtension(fileName)
+	fullFileName := extractors.FileName(filePath)
+	fileName, fileExt := extractors.FileExtension(fullFileName)
 
-	fmt.Printf("filename: %s\n", nameWithoutExt)
+	fmt.Printf("filename: %s\n", fileName)
 	fmt.Printf("extension: %s\n", fileExt)
 }
